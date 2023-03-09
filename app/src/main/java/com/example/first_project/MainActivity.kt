@@ -1,5 +1,6 @@
 package com.example.first_project
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -13,32 +14,31 @@ class MainActivity : AppCompatActivity() {
         myButton.setOnClickListener{onClick()}
     }
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     private fun onClick(){
         val fieldTxt:EditText= findViewById(R.id.txtUserName)
-        var name:String= fieldTxt.text.toString()
+        val name:String= fieldTxt.text.toString()
 
-        var toggleBtn:ToggleButton= findViewById(R.id.toggleButton)
+        val toggleBtn:ToggleButton= findViewById(R.id.toggleButton)
         var statusToggle:String = ""
-        toggleBtn.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                statusToggle = "Toogle activo"
+            if (toggleBtn.isChecked) {
+                statusToggle += "Toogle activo"
             } else {
-                statusToggle = "Toogle inactivo"
+                statusToggle += "Toogle inactivo"
             }
-        }
 
-        var switchBtn:Switch = findViewById(R.id.switch1)
+
+        val switchBtn:Switch = findViewById(R.id.switch1)
         var statusSwitch:String = ""
-            switchBtn.setOnCheckedChangeListener { _, isChecked ->
-                if (isChecked) {
-                   statusSwitch= "Switch activo"
+                if (switchBtn.isChecked) {
+                   statusSwitch += "Switch activo"
                 } else {
-                    statusSwitch = "Switch inactivo"
+                    statusSwitch += "Switch inactivo"
                 }
-            }
 
-        var checkOne:CheckBox =findViewById(R.id.checkBox)
-        var checkTwo:CheckBox =findViewById(R.id.checkBox2)
+
+        val checkOne:CheckBox =findViewById(R.id.checkBox)
+        val checkTwo:CheckBox =findViewById(R.id.checkBox2)
         var checkResult: String = ""
         if (checkOne.isChecked){
             checkResult += "Check 1 activo "
@@ -51,22 +51,24 @@ class MainActivity : AppCompatActivity() {
             checkResult += "Check 2 inactivo "
         }
 
-        var radioOne:RadioButton =findViewById(R.id.radioButton)
-        var radioTwo:RadioButton =findViewById(R.id.radioButton2)
+        val radioOne:RadioButton =findViewById(R.id.radioButton)
+        val radioTwo:RadioButton =findViewById(R.id.radioButton2)
         var radioResult: String = ""
         if (radioOne.isChecked){
-            radioResult += "opcion 1"
+            radioResult += "opcion 1 seleccionada "
         }else{
-            radioResult += "error"
+            radioResult += "opcion 1 no seleccionada"
         }
 
         if(radioTwo.isChecked) {
-            radioResult += "opcion 2 "
+            radioResult += "opcion 2 seleccionada "
         }else{
-            radioResult += "error"
+            radioResult += "opcion 2 no seleccionada"
         }
 
-        Toast.makeText(this,"$name \n $statusToggle \n $statusSwitch \n $checkResult \n $radioResult", Toast.LENGTH_LONG).show()
+        val message = "$name, $statusToggle ,$statusSwitch, $checkResult, $radioResult"
+
+        Toast.makeText(this, message , Toast.LENGTH_LONG).show()
     }
 
 }
