@@ -6,8 +6,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.first_project.R.color.green
+import com.example.first_project.R.color.red
 import org.w3c.dom.Text
 
+@Suppress("DEPRECATION")
 class averagaNotes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,14 +41,20 @@ class averagaNotes : AppCompatActivity() {
 
                 var average: Double = (note1+note2+note3)/3
 
+                val txtResult:TextView = findViewById(R.id.txtResult)
+
                 var status:String = ""
                 if(average >= 3.5){
+                    txtResult.setBackgroundColor(resources.getColor(green));
                     status = "APROBO la materia"
                 }else{
+                    txtResult.setBackgroundColor(resources.getColor(red))
                     status = "REPROBO la materia "
                 }
 
-                Toast.makeText(this,"Usted $studentName obtuvo un promedio de $average en la materia $subject y $status",Toast.LENGTH_LONG).show()
+                var message:String="Usted $studentName obtuvo un promedio de $average en la materia $subject y $status"
+
+                txtResult.text=message
             }
 
             2->{
