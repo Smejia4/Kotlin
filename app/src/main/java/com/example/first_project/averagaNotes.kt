@@ -45,7 +45,11 @@ class averagaNotes : AppCompatActivity() {
                 val txtResult:TextView = findViewById(R.id.txtResult)
 
                 var status:String = ""
+<<<<<<< HEAD
                 if(average >= 35){
+=======
+                if(average >= 3.5){
+>>>>>>> 0bceae8f29ab8baf142a4736a1ca926b53b279bc
                     txtResult.setBackgroundColor(resources.getColor(green));
                     status = "APROBO la materia"
                 }else{
@@ -56,6 +60,7 @@ class averagaNotes : AppCompatActivity() {
                 var message:String="Usted $studentName obtuvo un promedio de $average en la materia $subject y $status"
 
                 txtResult.text=message
+<<<<<<< HEAD
 
                 val intent = Intent(this,MainActivity::class.java)
                 val miBundle:Bundle = Bundle()
@@ -63,6 +68,8 @@ class averagaNotes : AppCompatActivity() {
                 intent.putExtras(miBundle)
                 startActivity(intent)
 
+=======
+>>>>>>> 0bceae8f29ab8baf142a4736a1ca926b53b279bc
             }
 
             2->{
