@@ -19,6 +19,12 @@ class MainActivity : AppCompatActivity() {
 
         val btnNext:Button= findViewById(R.id.btnNext)
         btnNext.setOnClickListener { onClick(2) }
+
+        var txtAverage:TextView = findViewById(R.id.resultAverage)
+        var miBundle:Bundle? =this.intent.extras
+        if(miBundle != null){
+            txtAverage.text="${miBundle.getString("Message")}"
+        }
     }
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -78,11 +84,14 @@ class MainActivity : AppCompatActivity() {
                 val message = "$name, $statusToggle ,$statusSwitch, $checkResult, $radioResult"
 
                 Toast.makeText(this, message , Toast.LENGTH_LONG).show()
+
+
             }
 
             2 ->{
                 val intent = Intent(this,averagaNotes::class.java)
                 startActivity(intent)
+
             }
         }
 

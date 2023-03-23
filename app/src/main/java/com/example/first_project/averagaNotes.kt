@@ -1,5 +1,6 @@
 package com.example.first_project
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -44,7 +45,7 @@ class averagaNotes : AppCompatActivity() {
                 val txtResult:TextView = findViewById(R.id.txtResult)
 
                 var status:String = ""
-                if(average >= 3.5){
+                if(average >= 35){
                     txtResult.setBackgroundColor(resources.getColor(green));
                     status = "APROBO la materia"
                 }else{
@@ -55,6 +56,13 @@ class averagaNotes : AppCompatActivity() {
                 var message:String="Usted $studentName obtuvo un promedio de $average en la materia $subject y $status"
 
                 txtResult.text=message
+
+                val intent = Intent(this,MainActivity::class.java)
+                val miBundle:Bundle = Bundle()
+                miBundle.putString("Message", "$message" )
+                intent.putExtras(miBundle)
+                startActivity(intent)
+
             }
 
             2->{

@@ -139,7 +139,13 @@
             android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Next" />
+            android:text="APP Promedio " />
+
+        <TextView
+            android:id="@+id/resultAverage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
