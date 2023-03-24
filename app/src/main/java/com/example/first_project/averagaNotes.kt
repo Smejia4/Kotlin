@@ -27,30 +27,27 @@ class averagaNotes : AppCompatActivity() {
     private fun onClick(btn:Int){
         when(btn){
             1->{
-                var txtStudentName:EditText= findViewById(R.id.txtStudentName)
-                var studentName:String= txtStudentName.text.toString()
+                val txtStudentName:EditText= findViewById(R.id.txtStudentName)
+                val studentName:String= txtStudentName.text.toString()
 
-                var txtSubject:EditText = findViewById(R.id.nameSubject)
-                var subject:String= txtSubject.text.toString()
+                val txtSubject:EditText = findViewById(R.id.nameSubject)
+                val subject:String= txtSubject.text.toString()
 
-                var txtNote1:EditText= findViewById(R.id.note)
-                var note1:Double = txtNote1.text.toString().toDouble()
-                var txtNote2:EditText= findViewById(R.id.note2)
-                var note2:Double = txtNote2.text.toString().toDouble()
-                var txtNote3:EditText= findViewById(R.id.note3)
-                var note3:Double = txtNote3.text.toString().toDouble()
+                val txtNote1:EditText= findViewById(R.id.note)
+                val note1:Double = txtNote1.text.toString().toDouble()
+                val txtNote2:EditText= findViewById(R.id.note2)
+                val note2:Double = txtNote2.text.toString().toDouble()
+                val txtNote3:EditText= findViewById(R.id.note3)
+                val note3:Double = txtNote3.text.toString().toDouble()
 
-                var average: Double = (note1+note2+note3)/3
+                val average: Double = (note1+note2+note3)/3
 
                 val txtResult:TextView = findViewById(R.id.txtResult)
 
                 var status:String = ""
-<<<<<<< HEAD
-                if(average >= 35){
-=======
+
                 if(average >= 3.5){
->>>>>>> 0bceae8f29ab8baf142a4736a1ca926b53b279bc
-                    txtResult.setBackgroundColor(resources.getColor(green));
+                    txtResult.setTextColor(resources.getColor(green))
                     status = "APROBO la materia"
                 }else{
                     txtResult.setBackgroundColor(resources.getColor(red))
@@ -60,16 +57,12 @@ class averagaNotes : AppCompatActivity() {
                 var message:String="Usted $studentName obtuvo un promedio de $average en la materia $subject y $status"
 
                 txtResult.text=message
-<<<<<<< HEAD
 
                 val intent = Intent(this,MainActivity::class.java)
                 val miBundle:Bundle = Bundle()
                 miBundle.putString("Message", "$message" )
                 intent.putExtras(miBundle)
                 startActivity(intent)
-
-=======
->>>>>>> 0bceae8f29ab8baf142a4736a1ca926b53b279bc
             }
 
             2->{
