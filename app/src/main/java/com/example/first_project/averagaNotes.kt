@@ -50,7 +50,7 @@ class averagaNotes : AppCompatActivity() {
                     txtResult.setTextColor(resources.getColor(green))
                     status = "APROBO la materia"
                 }else{
-                    txtResult.setBackgroundColor(resources.getColor(red))
+                    txtResult.setTextColor(resources.getColor(red))
                     status = "REPROBO la materia "
                 }
 
